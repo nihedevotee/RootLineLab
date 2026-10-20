@@ -20,50 +20,60 @@ const navItems = [
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const lastScrollY = useRef(0);
   const pathname = usePathname();
 
-  // Scroll hide / show
+  // Keep navbar pinned while scrolling through page, hide only when reaching footer
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const scrollBottom = window.scrollY + windowHeight;
+        const docHeight = document.documentElement.scrollHeight;
 
-      // Hide on scroll down, show on scroll up (after scrolling past 100px)
-      if (currentScrollY > 100) {
-        if (currentScrollY > lastScrollY.current && !isMenuOpen) {
-          setIsVisible(false); // scrolling down
+        // Pinned throughout all content; smoothly hides when footer meets navbar or at bottom
+        const isAtFooter = footerRect.top <= 120 || scrollBottom >= docHeight - 60;
+
+        if (isAtFooter && !isMenuOpen) {
+          setIsVisible(false);
         } else {
-          setIsVisible(true); // scrolling up
+          setIsVisible(true);
         }
       } else {
         setIsVisible(true);
       }
-
-      lastScrollY.current = currentScrollY;
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isMenuOpen]);
+    window.addEventListener('resize', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [isMenuOpen, pathname]);
 
   return (
     <>
       <header
-        className={`fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 transition-all duration-300 ${
-          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-24 opacity-0'
+        className={`fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 w-[96%] max-w-7xl 2xl:max-w-[1440px] z-50 transition-all duration-300 ease-out ${
+          isVisible
+            ? 'translate-y-0 opacity-100 pointer-events-auto'
+            : '-translate-y-28 opacity-0 pointer-events-none'
         }`}
       >
-        {/* Floating Translucent Pill Container */}
-        <div className="relative flex items-center justify-between px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#146375]/85 hover:bg-[#146375]/95 backdrop-blur-xl border border-white/20 shadow-2xl shadow-[#0E3D47]/40 transition-colors duration-300 select-none">
+        {/* Floating Translucent Pill Container with increased width & breathing room */}
+        <div className="relative flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-full bg-[#146375]/85 hover:bg-[#146375]/95 backdrop-blur-xl border border-white/20 shadow-2xl shadow-[#0E3D47]/40 transition-colors duration-300 select-none">
           {/* Left: Official Logo */}
           <div className="shrink-0 pl-1">
             <Logo light height={32} />
           </div>
 
-          {/* Center: Desktop Navigation Links with Active White Pill Capsule */}
+          {/* Center: Desktop Navigation Links with Active White Pill Capsule (Visible on XL devices) */}
           <nav
             aria-label="Primary Navigation"
-            className="hidden lg:flex items-center gap-1 xl:gap-2 mx-2"
+            className="hidden xl:flex items-center gap-1.5 2xl:gap-3 mx-2"
           >
             {navItems.map((item) => {
               const isActive =
@@ -74,7 +84,7 @@ export default function Navbar() {
               return isActive ? (
                 <span
                   key={item.href}
-                  className="flex items-center gap-1.5 bg-[#FBFAF2] text-[#146375] text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-sm"
+                  className="flex items-center gap-1.5 bg-[#FBFAF2] text-[#146375] text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm"
                 >
                   <span className="text-[10px] text-[#3C8D70] font-mono font-medium">
                     {item.index}
@@ -87,7 +97,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-white/85 hover:text-white text-xs xl:text-[13px] font-medium px-2.5 xl:px-3 py-1.5 rounded-full transition-colors duration-200 hover:bg-white/10 whitespace-nowrap"
+                  className="text-white/85 hover:text-white text-xs xl:text-[13px] font-medium px-3 xl:px-3.5 py-1.5 rounded-full transition-colors duration-200 hover:bg-white/10 whitespace-nowrap"
                 >
                   {item.name}
                 </Link>
@@ -96,22 +106,22 @@ export default function Navbar() {
           </nav>
 
           {/* Right: Contact White Pill Button + Hamburger Menu Trigger */}
-          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0 pr-1">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0 pr-1">
             {/* White Pill Button (Like 'Resume' button in reference) */}
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-[#FBFAF2] text-[#146375] hover:bg-[#D4EA50] hover:text-[#146375] font-semibold text-xs sm:text-sm px-4 py-1.5 rounded-full transition-all duration-200 shadow-sm active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4EA50]"
+              className="inline-flex items-center justify-center bg-[#FBFAF2] text-[#146375] hover:bg-[#D4EA50] hover:text-[#146375] font-semibold text-xs sm:text-sm px-5 py-1.5 rounded-full transition-all duration-200 shadow-sm active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4EA50]"
             >
               Contact
             </Link>
 
-            {/* Menu Button (Hamburger to X) */}
+            {/* Menu Button (Hamburger to X) - Removed on XL devices */}
             <button
               type="button"
               onClick={() => setIsMenuOpen((prev) => !prev)}
               aria-label={isMenuOpen ? 'Close full menu' : 'Open full menu'}
               aria-expanded={isMenuOpen}
-              className={`relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4EA50] ${
+              className={`relative flex xl:hidden items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4EA50] ${
                 isMenuOpen
                   ? 'bg-white/20 text-[#D4EA50]'
                   : 'bg-white/10 hover:bg-white/20 text-white'
