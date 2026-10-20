@@ -9,11 +9,11 @@ export default function Section({
   ...props
 }) {
   const themeStyles = {
-    light: 'bg-[#FBFAF2] text-[#0B2A33]',
-    mist: 'bg-[#EEF3EE] text-[#0B2A33]',
-    cream: 'bg-[#F5EFB3]/40 text-[#0B2A33]',
-    dark: 'bg-[#06161B] text-[#FBFAF2] dark-section',
-    'gradient-dark': 'bg-gradient-to-b from-[#06161B] via-[#0B2A33] to-[#06161B] text-[#FBFAF2] dark-section',
+    light: 'bg-[#FBFAF2] text-[#146375]',
+    mist: 'bg-[#EEF3EE] text-[#146375]',
+    cream: 'bg-[#F5EFB3]/40 text-[#146375]',
+    dark: 'bg-[#0E3D47] text-[#FBFAF2] dark-section',
+    'gradient-dark': 'bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] dark-section',
     teal: 'bg-[#146375] text-[#FBFAF2] dark-section',
   };
 

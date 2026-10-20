@@ -63,7 +63,7 @@ export default function Modal({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#06161B]/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-[#0E3D47]/80 backdrop-blur-md"
             aria-hidden="true"
           />
 
@@ -81,7 +81,7 @@ export default function Modal({
               {title && (
                 <h3
                   id="modal-title"
-                  className="text-xl sm:text-2xl font-bold text-[#0B2A33] tracking-tight"
+                  className="text-xl sm:text-2xl font-bold text-[#146375] tracking-tight"
                 >
                   {title}
                 </h3>
@@ -89,7 +89,7 @@ export default function Modal({
               <button
                 type="button"
                 onClick={onClose}
-                className="p-2 ml-auto rounded-full text-[#0B2A33]/60 hover:text-[#0B2A33] hover:bg-[#EEF3EE] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#146375]"
+                className="p-2 ml-auto rounded-full text-[#146375]/60 hover:text-[#146375] hover:bg-[#EEF3EE] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#146375]"
                 aria-label="Close dialog"
               >
                 <X className="w-5 h-5" />
@@ -97,7 +97,7 @@ export default function Modal({
             </div>
 
             {/* Content */}
-            <div className="pt-5 text-[#0B2A33]">{children}</div>
+            <div className="pt-5 text-[#146375]/90">{children}</div>
           </motion.div>
         </div>
       )}

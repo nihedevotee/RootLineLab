@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className="min-h-full flex flex-col bg-[#FBFAF2] text-[#0B2A33] selection:bg-[#D4EA50] selection:text-[#06161B]">
+      <body className="min-h-full flex flex-col bg-[#FBFAF2] text-[#146375] selection:bg-[#D4EA50] selection:text-[#146375]">
         <SkipLink />
         <Preloader />
         <Navbar />

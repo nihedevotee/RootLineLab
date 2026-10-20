@@ -9,10 +9,10 @@ export default function Footer() {
   const currentYear = 2026;
 
   return (
-    <footer className="relative bg-[#06161B] text-[#FBFAF2] pt-20 sm:pt-28 pb-12 overflow-hidden border-t border-white/10 select-none">
+    <footer className="relative bg-gradient-to-b from-[#0E3D47] to-[#0A2D35] text-[#FBFAF2] pt-20 sm:pt-28 pb-12 overflow-hidden border-t border-[#3C8D70]/30 select-none">
       {/* Background soft canopy glow */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#146375]/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#3C8D70]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#146375]/30 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#3C8D70]/25 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main 4-column grid */}
@@ -20,7 +20,7 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-6">
             <Logo light />
-            <p className="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-sm font-light">
+            <p className="text-[#F5EFB3]/85 text-sm sm:text-base leading-relaxed max-w-sm font-light">
               {siteConfig.tagline} We engineer resilient web applications, custom software, and digital platforms that accelerate modern business growth.
             </p>
 
@@ -84,7 +84,7 @@ export default function Footer() {
             <p className="text-xs font-mono uppercase tracking-widest text-[#99CB5B] mb-4 font-semibold">
               Resources
             </p>
-            <ul className="space-y-2.5 text-sm text-neutral-400">
+            <ul className="space-y-2.5 text-sm text-[#F5EFB3]/75">
               {siteConfig.footerLinks.resources.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -101,11 +101,11 @@ export default function Footer() {
         </div>
 
         {/* Lower Row: Legal + Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#F5EFB3]/70">
           <p>© {currentYear} Rootline Lab. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>Dhaka, Bangladesh</span>
-            <span className="text-neutral-600">•</span>
+            <span className="text-[#3C8D70]">•</span>
             <span className="text-[#99CB5B] font-mono">Status: All systems operational</span>
           </div>
         </div>

@@ -46,8 +46,8 @@ export default function ServicesBento() {
             delay={index * 0.05}
             className={`group relative rounded-3xl p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 hover:scale-[1.01] hover:shadow-xl ${
               isFeatured
-                ? 'md:col-span-2 bg-gradient-to-br from-[#146375] to-[#0B2A33] text-white border border-[#3C8D70]/40'
-                : 'bg-[#FBFAF2] text-[#0B2A33] border border-[#146375]/15 hover:border-[#146375]/40 shadow-xs'
+                ? 'md:col-span-2 bg-gradient-to-br from-[#146375] via-[#125360] to-[#0E3D47] text-white border border-[#3C8D70]/40'
+                : 'bg-[#FBFAF2] text-[#146375] border border-[#146375]/15 hover:border-[#146375]/40 shadow-xs'
             }`}
           >
             {/* Top row: Icon and Badge */}
@@ -77,14 +77,14 @@ export default function ServicesBento() {
             <div className="space-y-3 mb-8">
               <h3
                 className={`text-2xl sm:text-3xl font-bold tracking-tight transition-colors duration-200 ${
-                  isFeatured ? 'text-white' : 'text-[#0B2A33]'
+                  isFeatured ? 'text-white' : 'text-[#146375]'
                 }`}
               >
                 {service.title}
               </h3>
               <p
                 className={`text-sm sm:text-base leading-relaxed ${
-                  isFeatured ? 'text-neutral-300' : 'text-[#0B2A33]/80'
+                  isFeatured ? 'text-[#F5EFB3]/90' : 'text-[#146375]/80'
                 }`}
               >
                 {service.shortDesc}

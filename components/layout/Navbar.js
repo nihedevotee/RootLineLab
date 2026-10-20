@@ -54,7 +54,7 @@ export default function Navbar() {
         }`}
       >
         {/* Floating Translucent Pill Container */}
-        <div className="relative flex items-center justify-between px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#06161B]/80 hover:bg-[#06161B]/90 backdrop-blur-xl border border-white/15 shadow-2xl shadow-black/40 transition-colors duration-300 select-none">
+        <div className="relative flex items-center justify-between px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#146375]/85 hover:bg-[#146375]/95 backdrop-blur-xl border border-white/20 shadow-2xl shadow-[#0E3D47]/40 transition-colors duration-300 select-none">
           {/* Left: Official Logo */}
           <div className="shrink-0 pl-1">
             <Logo light height={32} />
@@ -74,12 +74,12 @@ export default function Navbar() {
               return isActive ? (
                 <span
                   key={item.href}
-                  className="flex items-center gap-1.5 bg-white text-[#06161B] text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-sm"
+                  className="flex items-center gap-1.5 bg-[#FBFAF2] text-[#146375] text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-sm"
                 >
-                  <span className="text-[10px] text-neutral-400 font-mono font-normal">
+                  <span className="text-[10px] text-[#3C8D70] font-mono font-medium">
                     {item.index}
                   </span>
-                  <span className="border-b-2 border-[#06161B] pb-0.5">
+                  <span className="border-b-2 border-[#146375] pb-0.5">
                     {item.name}
                   </span>
                 </span>
@@ -87,7 +87,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-neutral-300 hover:text-white text-xs xl:text-[13px] font-medium px-2.5 xl:px-3 py-1.5 rounded-full transition-colors duration-200 hover:bg-white/5 whitespace-nowrap"
+                  className="text-white/85 hover:text-white text-xs xl:text-[13px] font-medium px-2.5 xl:px-3 py-1.5 rounded-full transition-colors duration-200 hover:bg-white/10 whitespace-nowrap"
                 >
                   {item.name}
                 </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
             {/* White Pill Button (Like 'Resume' button in reference) */}
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-white text-[#06161B] hover:bg-[#D4EA50] font-semibold text-xs sm:text-sm px-4 py-1.5 rounded-full transition-all duration-200 shadow-sm active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4EA50]"
+              className="inline-flex items-center justify-center bg-[#FBFAF2] text-[#146375] hover:bg-[#D4EA50] hover:text-[#146375] font-semibold text-xs sm:text-sm px-4 py-1.5 rounded-full transition-all duration-200 shadow-sm active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4EA50]"
             >
               Contact
             </Link>

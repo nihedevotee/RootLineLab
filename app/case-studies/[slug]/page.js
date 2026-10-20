@@ -46,7 +46,7 @@ export default async function CaseStudyDetailPage({ params }) {
   return (
     <>
       {/* 1. HERO SECTION */}
-      <section className="bg-gradient-to-b from-[#06161B] via-[#0B2A33] to-[#06161B] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
+      <section className="bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
         <Container size="default">
           <RevealOnScroll className="max-w-4xl mx-auto text-center">
             {/* Back link */}
@@ -59,7 +59,7 @@ export default async function CaseStudyDetailPage({ params }) {
             </Link>
 
             <div className="flex items-center justify-center gap-3 mb-6">
-              <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#146375]/50 text-[#D4EA50] border border-[#3C8D70]/40">
+              <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#0E3D47]/80 text-[#D4EA50] border border-[#3C8D70]/60">
                 {study.industry}
               </span>
               <span className="px-3 py-1 rounded-full text-xs font-mono bg-white/10 text-white border border-white/15">

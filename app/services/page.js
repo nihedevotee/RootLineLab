@@ -48,16 +48,16 @@ export default function ServicesPage() {
   return (
     <>
       {/* 1. HERO SECTION */}
-      <section className="bg-gradient-to-b from-[#06161B] via-[#0B2A33] to-[#06161B] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
+      <section className="bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
         <Container size="default" className="text-center">
           <RevealOnScroll>
-            <span className="inline-flex items-center text-xs font-mono uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#146375]/50 text-[#D4EA50] border border-[#3C8D70]/40 mb-6">
+            <span className="inline-flex items-center text-xs font-mono uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#0E3D47]/80 text-[#D4EA50] border border-[#3C8D70]/60 mb-6">
               Full-Spectrum Engineering
             </span>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.08]">
               Software engineered to match your operational ambition.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="mt-6 text-lg sm:text-xl text-[#F5EFB3]/90 max-w-2xl mx-auto leading-relaxed font-light">
               We build custom software, web applications, and resilient digital architectures across 11 focused domains. No generic off-the-shelf templates.
             </p>
           </RevealOnScroll>

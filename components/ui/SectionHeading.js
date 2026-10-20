@@ -20,14 +20,14 @@ export default function SectionHeading({
 
   const kickerStyles =
     theme === 'dark'
-      ? 'text-[#D4EA50] bg-[#146375]/40 border border-[#3C8D70]/40'
+      ? 'text-[#D4EA50] bg-[#0E3D47]/70 border border-[#3C8D70]/50'
       : 'text-[#146375] bg-[#EEF3EE] border border-[#146375]/15';
 
   const titleStyles =
-    theme === 'dark' ? 'text-white' : 'text-[#0B2A33]';
+    theme === 'dark' ? 'text-white' : 'text-[#146375]';
 
   const subheadStyles =
-    theme === 'dark' ? 'text-neutral-300' : 'text-[#0B2A33]/80';
+    theme === 'dark' ? 'text-[#F5EFB3]/90' : 'text-[#146375]/80';
 
   return (
     <div

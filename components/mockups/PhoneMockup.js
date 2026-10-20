@@ -4,16 +4,16 @@ export default function PhoneMockup({
 }) {
   return (
     <div
-      className={`relative w-[260px] sm:w-[290px] h-[520px] sm:h-[560px] rounded-[44px] bg-[#06161B] border-[6px] border-[#146375]/40 shadow-2xl shadow-[#06161B]/80 overflow-hidden flex flex-col select-none text-left ${className}`}
+      className={`relative w-[260px] sm:w-[290px] h-[520px] sm:h-[560px] rounded-[44px] bg-[#0E3D47] border-[6px] border-[#3C8D70]/40 shadow-2xl shadow-[#0E3D47]/80 overflow-hidden flex flex-col select-none text-left ${className}`}
     >
       {/* Dynamic Island / Notch */}
-      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-5 bg-black rounded-full z-20 flex items-center justify-between px-2.5">
+      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-5 bg-black/60 rounded-full z-20 flex items-center justify-between px-2.5">
         <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
         <span className="w-2 h-2 rounded-full bg-[#3C8D70]" />
       </div>
 
       {/* Screen Area */}
-      <div className="flex-1 bg-gradient-to-b from-[#0B2A33] to-[#06161B] text-white p-4 pt-10 flex flex-col justify-between overflow-hidden">
+      <div className="flex-1 bg-gradient-to-b from-[#146375] to-[#0E3D47] text-white p-4 pt-10 flex flex-col justify-between overflow-hidden">
         {/* Top Header */}
         <div>
           <div className="flex justify-between items-center text-[10px] text-neutral-400 font-medium mb-3">

@@ -47,14 +47,15 @@ export default function HomePage() {
       />
 
       {/* 1. HERO SECTION (Dark gradient, full viewport) */}
-      <section className="relative min-h-screen bg-gradient-to-b from-[#06161B] via-[#0B2A33] to-[#06161B] text-[#FBFAF2] pt-32 sm:pt-40 pb-20 sm:pb-32 flex flex-col justify-between overflow-hidden">
-        {/* Soft Ambient Blobs */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-gradient-to-br from-[#146375]/40 via-[#3C8D70]/25 to-[#D4EA50]/15 rounded-full blur-[140px] pointer-events-none" />
+      {/* 1. HERO SECTION (Rich Deep Teal gradient, full viewport) */}
+      <section className="relative min-h-screen bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] pt-32 sm:pt-40 pb-20 sm:pb-32 flex flex-col justify-between overflow-hidden">
+        {/* Soft Ambient Blobs in Canopy Green, Leaf, and Lime */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gradient-to-br from-[#3C8D70]/40 via-[#99CB5B]/25 to-[#D4EA50]/20 rounded-full blur-[140px] pointer-events-none" />
 
         <Container size="default" className="relative z-10 text-center flex-1 flex flex-col justify-center">
           <RevealOnScroll>
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#146375]/50 border border-[#3C8D70]/40 text-[#D4EA50] text-xs font-mono tracking-widest uppercase mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0E3D47]/80 border border-[#3C8D70]/60 text-[#D4EA50] text-xs font-mono tracking-widest uppercase mb-8 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Dhaka, Bangladesh — Software Engineering Studio</span>
             </div>
@@ -69,7 +70,7 @@ export default function HomePage() {
             </h1>
 
             {/* Intro Copy */}
-            <p className="mt-8 text-lg sm:text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="mt-8 text-lg sm:text-xl md:text-2xl text-[#F5EFB3]/90 max-w-3xl mx-auto font-light leading-relaxed">
               At Rootline Lab, we turn ideas into powerful websites, applications, and custom software designed to help businesses grow.
             </p>
 
@@ -99,7 +100,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. TRUST STRIP (Capabilities Marquee) */}
-      <section className="bg-[#0B2A33] border-y border-white/10 py-5">
+      <section className="bg-[#0E3D47] border-y border-[#3C8D70]/30 py-5">
         <Marquee items={siteConfig.capabilities} speed={35} />
       </section>
 
@@ -154,7 +155,7 @@ export default function HomePage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Solutions Card */}
-            <RevealOnScroll className="group relative rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-[#146375] to-[#0B2A33] text-white overflow-hidden shadow-xl flex flex-col justify-between">
+            <RevealOnScroll className="group relative rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-[#146375] via-[#125360] to-[#0E3D47] text-white overflow-hidden shadow-xl flex flex-col justify-between">
               <div className="relative z-10">
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-white/10 text-[#D4EA50] border border-white/15 mb-6">
                   <Cpu className="w-3.5 h-3.5" />
@@ -163,7 +164,7 @@ export default function HomePage() {
                 <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
                   Solutions By Business Problem
                 </h3>
-                <p className="text-neutral-300 text-base leading-relaxed mb-8 font-light">
+                <p className="text-[#F5EFB3]/85 text-base leading-relaxed mb-8 font-light">
                   Rather than picking isolated tools, see how we solve operational friction: selling online, automating manual workflows, launching SaaS platforms, or unifying legacy systems.
                 </p>
               </div>

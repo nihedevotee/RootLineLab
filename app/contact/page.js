@@ -41,7 +41,7 @@ export default function ContactPage() {
             {/* Direct Details Card */}
             <RevealOnScroll
               delay={0.1}
-              className="bg-[#06161B] text-[#FBFAF2] rounded-3xl p-8 sm:p-9 border border-white/10 shadow-xl space-y-6"
+              className="bg-gradient-to-br from-[#146375] to-[#0E3D47] text-[#FBFAF2] rounded-3xl p-8 sm:p-9 border border-[#3C8D70]/40 shadow-xl space-y-6"
             >
               <div>
                 <p className="text-xs font-mono uppercase tracking-wider text-[#99CB5B] font-semibold mb-1">
@@ -56,9 +56,9 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3.5">
                   <MapPin className="w-5 h-5 text-[#D4EA50] shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-xs text-neutral-400 font-mono">Location</p>
+                    <p className="text-xs text-[#F5EFB3]/75 font-mono">Location</p>
                     <p className="text-sm font-medium text-white">{siteConfig.location}</p>
-                    <p className="text-xs text-neutral-400 mt-0.5">Serving clients locally and internationally</p>
+                    <p className="text-xs text-[#F5EFB3]/60 mt-0.5">Serving clients locally and internationally</p>
                   </div>
                 </div>
 

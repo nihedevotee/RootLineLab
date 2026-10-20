@@ -24,15 +24,15 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      'bg-[#146375] text-[#FBFAF2] hover:bg-[#0B2A33] hover:shadow-lg hover:shadow-[#146375]/25 border border-transparent focus-visible:ring-[#3C8D70]',
+      'bg-[#146375] text-[#FBFAF2] hover:bg-[#3C8D70] hover:shadow-lg hover:shadow-[#146375]/25 border border-transparent focus-visible:ring-[#3C8D70]',
     secondary:
       'bg-transparent text-[#146375] border-2 border-[#146375] hover:bg-[#146375] hover:text-[#FBFAF2] focus-visible:ring-[#146375]',
     'dark-secondary':
       'bg-transparent text-[#FBFAF2] border-2 border-[#3C8D70] hover:bg-[#3C8D70] hover:text-white focus-visible:ring-[#D4EA50]',
     ghost:
-      'bg-transparent text-[#0B2A33] hover:bg-[#EEF3EE] border border-transparent focus-visible:ring-[#146375]',
+      'bg-transparent text-[#146375] hover:bg-[#EEF3EE] border border-transparent focus-visible:ring-[#146375]',
     lime:
-      'bg-[#D4EA50] text-[#06161B] font-semibold hover:bg-[#99CB5B] hover:shadow-lg hover:shadow-[#D4EA50]/30 border border-transparent focus-visible:ring-[#06161B]',
+      'bg-[#D4EA50] text-[#146375] font-semibold hover:bg-[#99CB5B] hover:shadow-lg hover:shadow-[#D4EA50]/30 border border-transparent focus-visible:ring-[#146375]',
     link:
       'p-0 bg-transparent text-[#146375] hover:text-[#3C8D70] font-medium inline-flex items-center gap-1 group/link',
   };

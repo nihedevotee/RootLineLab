@@ -44,16 +44,16 @@ export default function CareersPage() {
   return (
     <>
       {/* 1. HERO SECTION */}
-      <section className="bg-gradient-to-b from-[#06161B] via-[#0B2A33] to-[#06161B] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
+      <section className="bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
         <Container size="default" className="text-center">
           <RevealOnScroll>
-            <span className="inline-flex items-center text-xs font-mono uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#146375]/50 text-[#D4EA50] border border-[#3C8D70]/40 mb-6">
+            <span className="inline-flex items-center text-xs font-mono uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#0E3D47]/80 text-[#D4EA50] border border-[#3C8D70]/60 mb-6">
               Engineering Careers
             </span>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.08]">
               Build meaningful software with engineers who care.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="mt-6 text-lg sm:text-xl text-[#F5EFB3]/90 max-w-2xl mx-auto leading-relaxed font-light">
               We are a team of product craftspeople in Dhaka solving real technical and operational challenges. No bureaucracy. No politics. Just great software.
             </p>
           </RevealOnScroll>
@@ -244,7 +244,7 @@ export default function CareersPage() {
 
                             <a
                               href={`mailto:${siteConfig.email}?subject=${mailtoSubject}&body=${mailtoBody}`}
-                              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#146375] hover:bg-[#0B2A33] text-[#FBFAF2] font-semibold text-xs sm:text-sm transition-all duration-200 shadow-sm"
+                              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#146375] hover:bg-[#3C8D70] text-[#FBFAF2] font-semibold text-xs sm:text-sm transition-all duration-200 shadow-sm"
                             >
                               <Mail className="w-4 h-4" />
                               <span>Apply via Email</span>
@@ -261,15 +261,15 @@ export default function CareersPage() {
 
           {/* "Don't see your role? Send us your CV" */}
           <div className="mt-16 p-8 sm:p-12 rounded-3xl bg-[#EEF3EE] border border-[#146375]/15 text-center max-w-2xl mx-auto space-y-4">
-            <h3 className="text-2xl font-bold text-[#0B2A33] tracking-tight">
+            <h3 className="text-2xl font-bold text-[#146375] tracking-tight">
               Don’t see your exact role?
             </h3>
-            <p className="text-sm text-[#0B2A33]/80 leading-relaxed">
+            <p className="text-sm text-[#146375]/80 leading-relaxed">
               We are constantly seeking brilliant engineers, UI/UX designers, and technical writers who take pride in their craft. Send us your CV and a link to your best work.
             </p>
             <a
               href={`mailto:${siteConfig.email}?subject=${encodeURIComponent('Open Application / CV Submission — Rootline Lab')}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full bg-[#146375] text-[#FBFAF2] hover:bg-[#0B2A33] transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full bg-[#146375] text-[#FBFAF2] hover:bg-[#3C8D70] transition-colors"
             >
               <Mail className="w-4 h-4 text-[#D4EA50]" />
               <span>Send Us Your CV ({siteConfig.email})</span>

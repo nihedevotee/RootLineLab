@@ -65,14 +65,14 @@ export default function ProcessSteps() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold tracking-tight text-[#0B2A33] mb-1">
+                <h3 className="text-2xl font-bold tracking-tight text-[#146375] mb-1">
                   {step.title}
                 </h3>
                 <p className="text-xs uppercase tracking-wider text-[#3C8D70] font-semibold mb-4">
                   {step.subtitle}
                 </p>
 
-                <p className="text-sm text-[#0B2A33]/80 leading-relaxed font-normal">
+                <p className="text-sm text-[#146375]/80 leading-relaxed font-normal">
                   {step.description}
                 </p>
               </div>
@@ -80,7 +80,7 @@ export default function ProcessSteps() {
               {/* Progress pill footer */}
               <div className="pt-6 mt-6 border-t border-[#146375]/10 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#3C8D70]" />
-                <span className="text-[11px] font-mono text-[#0B2A33]/60">
+                <span className="text-[11px] font-mono text-[#146375]/60">
                   Phase {step.num} of 04
                 </span>
               </div>

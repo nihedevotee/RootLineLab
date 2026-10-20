@@ -49,7 +49,7 @@ export default async function BlogPostPage({ params }) {
   return (
     <>
       {/* 1. ARTICLE HEADER */}
-      <section className="bg-gradient-to-b from-[#06161B] via-[#0B2A33] to-[#06161B] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
+      <section className="bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
         <Container size="default">
           <div className="max-w-[760px] mx-auto">
             {/* Back to blog */}
@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }) {
             </Link>
 
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono mb-6">
-              <span className="px-3 py-1 rounded-full bg-[#146375]/60 text-[#D4EA50] border border-[#3C8D70]/40">
+              <span className="px-3 py-1 rounded-full bg-[#0E3D47]/80 text-[#D4EA50] border border-[#3C8D70]/60">
                 {post.category}
               </span>
               <span className="text-neutral-400 flex items-center gap-1">

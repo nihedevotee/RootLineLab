@@ -6,10 +6,10 @@ export default function BrowserMockup({
 }) {
   return (
     <div
-      className={`rounded-2xl sm:rounded-3xl border border-[#146375]/20 bg-[#0B2A33] shadow-2xl shadow-[#06161B]/60 overflow-hidden text-left ${className}`}
+      className={`rounded-2xl sm:rounded-3xl border border-[#3C8D70]/30 bg-[#0E3D47] shadow-2xl shadow-[#0E3D47]/60 overflow-hidden text-left ${className}`}
     >
       {/* Browser Chrome Header */}
-      <div className="flex items-center justify-between px-4 py-3 bg-[#06161B]/90 border-b border-white/10 select-none">
+      <div className="flex items-center justify-between px-4 py-3 bg-[#0A2D35]/95 border-b border-white/10 select-none">
         {/* Window controls */}
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-[#EF4444]/80 inline-block" />
@@ -30,7 +30,7 @@ export default function BrowserMockup({
       </div>
 
       {/* Browser Body / Inner Preview */}
-      <div className="p-4 sm:p-6 bg-[#0B2A33] text-[#FBFAF2]">
+      <div className="p-4 sm:p-6 bg-[#0E3D47] text-[#FBFAF2]">
         {children || (
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">

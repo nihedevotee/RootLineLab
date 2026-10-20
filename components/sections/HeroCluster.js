@@ -56,10 +56,10 @@ export default function HeroCluster() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
-        className="hidden md:inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#06161B]/90 border border-white/10 shadow-xl backdrop-blur-md text-xs text-white absolute -bottom-6 left-4 z-30"
+        className="hidden md:inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0E3D47]/90 border border-[#3C8D70]/40 shadow-xl backdrop-blur-md text-xs text-white absolute -bottom-6 left-4 z-30"
       >
         <span className="w-2 h-2 rounded-full bg-[#D4EA50] animate-ping" />
-        <span className="font-mono text-neutral-300">Continuous deployment pipeline active</span>
+        <span className="font-mono text-[#F5EFB3]/90">Continuous deployment pipeline active</span>
       </motion.div>
     </div>
   );

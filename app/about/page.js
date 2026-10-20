@@ -82,16 +82,16 @@ export default function AboutPage() {
   return (
     <>
       {/* 1. HERO SECTION */}
-      <section className="bg-gradient-to-b from-[#06161B] via-[#0B2A33] to-[#06161B] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
+      <section className="bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] pt-36 pb-20 sm:pt-44 sm:pb-28">
         <Container size="default" className="text-center">
           <RevealOnScroll>
-            <span className="inline-flex items-center text-xs font-mono uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#146375]/50 text-[#D4EA50] border border-[#3C8D70]/40 mb-6">
+            <span className="inline-flex items-center text-xs font-mono uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#0E3D47]/80 text-[#D4EA50] border border-[#3C8D70]/60 mb-6">
               Studio Philosophy
             </span>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.08]">
               Rootline Lab — Building smart software for modern businesses.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="mt-6 text-lg sm:text-xl text-[#F5EFB3]/90 max-w-2xl mx-auto leading-relaxed font-light">
               We are an engineering studio founded on the conviction that software should simplify business operations, not complicate them.
             </p>
           </RevealOnScroll>
@@ -141,7 +141,7 @@ export default function AboutPage() {
 
             <RevealOnScroll
               delay={0.15}
-              className="bg-gradient-to-br from-[#146375] to-[#0B2A33] text-white p-8 sm:p-12 rounded-3xl border border-[#3C8D70]/40 shadow-xl space-y-4"
+              className="bg-gradient-to-br from-[#146375] via-[#125360] to-[#0E3D47] text-white p-8 sm:p-12 rounded-3xl border border-[#3C8D70]/40 shadow-xl space-y-4"
             >
               <span className="text-xs font-mono uppercase tracking-widest text-[#D4EA50] font-semibold">
                 Our Vision
@@ -149,7 +149,7 @@ export default function AboutPage() {
               <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 To become South Asia’s benchmark for engineering rigor and design clarity.
               </h3>
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-[#F5EFB3]/85 leading-relaxed font-light">
                 Proving that a studio based in Dhaka can deliver global-standard software architecture, pixel-perfect user experiences, and transparent client partnerships.
               </p>
             </RevealOnScroll>
@@ -231,11 +231,11 @@ export default function AboutPage() {
                 className="bg-[#EEF3EE]/50 border border-[#146375]/15 rounded-3xl p-6 text-center space-y-4 hover:bg-[#FBFAF2] transition-colors"
               >
                 {/* Initials Avatar */}
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#146375] to-[#0B2A33] text-[#D4EA50] font-mono font-bold text-xl flex items-center justify-center mx-auto shadow-md">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#146375] to-[#0E3D47] text-[#D4EA50] font-mono font-bold text-xl flex items-center justify-center mx-auto shadow-md">
                   {member.initials}
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-[#0B2A33]">{member.role}</h4>
+                  <h4 className="text-base font-bold text-[#146375]">{member.role}</h4>
                   <p className="text-xs font-mono text-[#3C8D70] font-medium mt-1">
                     {member.focus}
                   </p>

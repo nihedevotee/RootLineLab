@@ -20,13 +20,12 @@ A complete, production-ready marketing website and web platform for **Rootline L
 
 | Token | Hex | Role |
 |---|---|---|
-| `--deep-teal` | `#146375` | Primary brand, headings on light, dark sections, primary buttons |
-| `--canopy-green` | `#3C8D70` | Secondary brand, links, icons, hover states |
+| `--deep-teal` | `#146375` | Primary brand anchor, hero backgrounds, primary text, buttons |
+| `--canopy-green` | `#3C8D70` | Secondary brand anchor, borders, glowing accents |
 | `--leaf` | `#99CB5B` | Accents, highlights, chart/diagram fills |
 | `--lime` | `#D4EA50` | Highlight accent, CTA glow, key emphasis words |
-| `--cream` | `#F5EFB3` | Soft section backgrounds, badges, subtle surfaces |
-| `--ink` | `#0B2A33` | Body text on light, header brand text |
-| `--ink-deep` | `#06161B` | Dark section background |
+| `--cream` | `#F5EFB3` | Warm subheads on dark sections, soft surfaces, badges |
+| `--ink-deep` | `#0E3D47` | Deep velvet teal dark section anchor |
 | `--paper` | `#FBFAF2` | Warm off-white page background |
 | `--mist` | `#EEF3EE` | Cards on light |
 

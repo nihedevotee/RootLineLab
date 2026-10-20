@@ -10,10 +10,10 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#06161B] via-[#0B2A33] to-[#06161B] text-[#FBFAF2] flex items-center justify-center pt-24 pb-16 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] flex items-center justify-center pt-24 pb-16 px-4">
       <Container size="narrow" className="text-center space-y-8">
         {/* Error Code Tag */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#146375]/50 border border-[#3C8D70]/40 text-[#D4EA50] text-xs font-mono tracking-widest uppercase">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0E3D47]/70 border border-[#3C8D70]/40 text-[#D4EA50] text-xs font-mono tracking-widest uppercase">
           <span>Error 404 • Missing Endpoint</span>
         </div>
 
@@ -25,7 +25,7 @@ export default function NotFound() {
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
             Page Not Found
           </h2>
-          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-light">
+          <p className="text-sm sm:text-base text-[#F5EFB3]/90 leading-relaxed font-light">
             The page you are looking for may have been moved, renamed, or never existed in our codebase.
           </p>
         </div>

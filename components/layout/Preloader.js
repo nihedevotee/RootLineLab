@@ -60,7 +60,7 @@ export default function Preloader() {
         key="preloader"
         initial={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: '-100%', transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
-        className="fixed inset-0 z-[100] bg-[#06161B] text-[#FBFAF2] flex flex-col justify-between p-8 sm:p-12 pointer-events-none select-none"
+        className="fixed inset-0 z-[100] bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] flex flex-col justify-between p-8 sm:p-12 pointer-events-none select-none"
       >
         {/* Top brand mark */}
         <div className="flex items-center justify-between">

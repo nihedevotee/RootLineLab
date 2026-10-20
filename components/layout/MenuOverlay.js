@@ -89,7 +89,7 @@ export default function MenuOverlay({ isOpen, onClose }) {
           role="dialog"
           aria-modal="true"
           aria-label="Navigation Menu"
-          className="fixed inset-0 z-40 bg-gradient-to-b from-[#146375] via-[#0B2A33] to-[#06161B] text-[#FBFAF2] flex flex-col justify-between overflow-y-auto overscroll-contain pt-24 pb-8 px-6 sm:px-12 lg:px-20"
+          className="fixed inset-0 z-40 bg-gradient-to-b from-[#146375] via-[#125360] to-[#0E3D47] text-[#FBFAF2] flex flex-col justify-between overflow-y-auto overscroll-contain pt-24 pb-8 px-6 sm:px-12 lg:px-20"
         >
           {/* Main Content: Left Navigation Links & Right Info Panel */}
           <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start my-auto">

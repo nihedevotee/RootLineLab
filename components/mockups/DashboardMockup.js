@@ -1,7 +1,7 @@
 export default function DashboardMockup({ className = '' }) {
   return (
     <div
-      className={`rounded-2xl sm:rounded-3xl border border-[#146375]/30 bg-[#06161B] shadow-2xl p-4 sm:p-6 text-white text-left ${className}`}
+      className={`rounded-2xl sm:rounded-3xl border border-[#3C8D70]/40 bg-[#0E3D47] shadow-2xl p-4 sm:p-6 text-white text-left ${className}`}
     >
       {/* Top Bar */}
       <div className="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-white/10">

@@ -11,13 +11,13 @@ export default function CTABand({
   className = '',
 }) {
   return (
-    <section className={`relative bg-gradient-to-b from-[#0B2A33] via-[#06161B] to-[#06161B] text-white py-24 sm:py-32 overflow-hidden border-t border-white/10 ${className}`}>
+    <section className={`relative bg-gradient-to-b from-[#0E3D47] via-[#125360] to-[#146375] text-white py-24 sm:py-32 overflow-hidden border-t border-[#3C8D70]/30 ${className}`}>
       {/* Background Soft Blob */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-[#146375]/30 to-[#3C8D70]/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-gradient-to-r from-[#3C8D70]/40 to-[#99CB5B]/20 rounded-full blur-[140px] pointer-events-none" />
 
       <Container size="narrow" className="relative z-10 text-center">
         <RevealOnScroll>
-          <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#146375]/50 text-[#D4EA50] border border-[#3C8D70]/40 mb-6">
+          <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#0E3D47]/80 text-[#D4EA50] border border-[#3C8D70]/60 mb-6">
             <span className="w-2 h-2 rounded-full bg-[#D4EA50] animate-pulse" />
             Let’s Build Together
           </span>
@@ -27,7 +27,7 @@ export default function CTABand({
             <span className="text-[#D4EA50]">Your software</span> should be, too.
           </h2>
 
-          <p className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed mb-10 font-light">
+          <p className="text-base sm:text-lg md:text-xl text-[#F5EFB3]/90 max-w-2xl mx-auto leading-relaxed mb-10 font-light">
             {subtitle}
           </p>
 
@@ -51,7 +51,7 @@ export default function CTABand({
             </a>
           </div>
 
-          <p className="text-xs font-mono text-neutral-400 mt-8">
+          <p className="text-xs font-mono text-[#F5EFB3]/75 mt-8">
             Based in Dhaka, Bangladesh — Partnering with forward-looking businesses worldwide.
           </p>
         </RevealOnScroll>

@@ -1,7 +1,7 @@
 export default function ErpMockup({ className = '' }) {
   return (
     <div
-      className={`rounded-2xl sm:rounded-3xl border border-[#146375]/30 bg-[#06161B] shadow-2xl p-4 sm:p-6 text-white text-left ${className}`}
+      className={`rounded-2xl sm:rounded-3xl border border-[#3C8D70]/40 bg-[#0E3D47] shadow-2xl p-4 sm:p-6 text-white text-left ${className}`}
     >
       <div className="flex items-center justify-between pb-4 border-b border-white/10">
         <div>

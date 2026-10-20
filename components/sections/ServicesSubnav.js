@@ -61,7 +61,7 @@ export default function ServicesSubnav() {
                 className={`text-xs whitespace-nowrap px-3.5 py-1.5 rounded-full transition-all duration-200 shrink-0 font-medium ${
                   isActive
                     ? 'bg-[#146375] text-[#FBFAF2] shadow-xs'
-                    : 'text-[#0B2A33]/70 hover:text-[#0B2A33] hover:bg-[#EEF3EE]'
+                    : 'text-[#146375]/75 hover:text-[#146375] hover:bg-[#EEF3EE]'
                 }`}
               >
                 {svc.title}
