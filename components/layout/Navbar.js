@@ -1,32 +1,35 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Logo from '@/components/ui/Logo';
-import Button from '@/components/ui/Button';
-import MenuOverlay from '@/components/layout/MenuOverlay';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Logo from '@/components/ui/Logo';
+import MenuOverlay from '@/components/layout/MenuOverlay';
+
+const navItems = [
+  { name: 'Home', href: '/', index: '01' },
+  { name: 'Services', href: '/services', index: '02' },
+  { name: 'Solutions', href: '/solutions', index: '03' },
+  { name: 'Products', href: '/products', index: '04' },
+  { name: 'Industries', href: '/industries', index: '05' },
+  { name: 'Case Studies', href: '/case-studies', index: '06' },
+  { name: 'About', href: '/about', index: '07' },
+  { name: 'Blog', href: '/blog', index: '08' },
+];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
 
-  // Scroll hide / show and backdrop trigger
+  // Scroll hide / show
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Backdrop blur activation
-      if (currentScrollY > 40) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-
-      // Hide on scroll down, show on scroll up (only after scrolling past 80px)
-      if (currentScrollY > 80) {
+      // Hide on scroll down, show on scroll up (after scrolling past 100px)
+      if (currentScrollY > 100) {
         if (currentScrollY > lastScrollY.current && !isMenuOpen) {
           setIsVisible(false); // scrolling down
         } else {
@@ -43,56 +46,82 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMenuOpen]);
 
-  // Determine dark mode context for navbar logo / text contrast
-  // Home hero is dark, services/about etc have different headers.
-  const isDarkHero = pathname === '/' && !isScrolled;
-
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isVisible ? 'translate-y-0' : '-translate-y-full'
-        } ${
-          isScrolled && !isMenuOpen
-            ? 'bg-[#FBFAF2]/85 backdrop-blur-md border-b border-[#146375]/10 shadow-xs py-3.5'
-            : 'bg-transparent py-5 sm:py-6'
+        className={`fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 transition-all duration-300 ${
+          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-24 opacity-0'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <Logo light={isDarkHero || isMenuOpen} />
+        {/* Floating Translucent Pill Container */}
+        <div className="relative flex items-center justify-between px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#06161B]/80 hover:bg-[#06161B]/90 backdrop-blur-xl border border-white/15 shadow-2xl shadow-black/40 transition-colors duration-300 select-none">
+          {/* Left: Official Logo */}
+          <div className="shrink-0 pl-1">
+            <Logo light height={32} />
+          </div>
 
-          {/* Right Controls: Contact Button + Animated Hamburger Menu */}
-          <div className="flex items-center gap-3 sm:gap-4">
-            <Button
+          {/* Center: Desktop Navigation Links with Active White Pill Capsule */}
+          <nav
+            aria-label="Primary Navigation"
+            className="hidden lg:flex items-center gap-1 xl:gap-2 mx-2"
+          >
+            {navItems.map((item) => {
+              const isActive =
+                item.href === '/'
+                  ? pathname === '/'
+                  : pathname.startsWith(item.href);
+
+              return isActive ? (
+                <span
+                  key={item.href}
+                  className="flex items-center gap-1.5 bg-white text-[#06161B] text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-sm"
+                >
+                  <span className="text-[10px] text-neutral-400 font-mono font-normal">
+                    {item.index}
+                  </span>
+                  <span className="border-b-2 border-[#06161B] pb-0.5">
+                    {item.name}
+                  </span>
+                </span>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-neutral-300 hover:text-white text-xs xl:text-[13px] font-medium px-2.5 xl:px-3 py-1.5 rounded-full transition-colors duration-200 hover:bg-white/5 whitespace-nowrap"
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Right: Contact White Pill Button + Hamburger Menu Trigger */}
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0 pr-1">
+            {/* White Pill Button (Like 'Resume' button in reference) */}
+            <Link
               href="/contact"
-              variant={isDarkHero || isMenuOpen ? 'lime' : 'primary'}
-              size="sm"
-              className="hidden sm:inline-flex"
+              className="inline-flex items-center justify-center bg-white text-[#06161B] hover:bg-[#D4EA50] font-semibold text-xs sm:text-sm px-4 py-1.5 rounded-full transition-all duration-200 shadow-sm active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4EA50]"
             >
-              Start a project
-            </Button>
+              Contact
+            </Link>
 
-            {/* Menu Trigger Button */}
+            {/* Menu Button (Hamburger to X) */}
             <button
               type="button"
               onClick={() => setIsMenuOpen((prev) => !prev)}
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={isMenuOpen ? 'Close full menu' : 'Open full menu'}
               aria-expanded={isMenuOpen}
-              className={`relative flex items-center justify-center w-11 h-11 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 ${
+              className={`relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4EA50] ${
                 isMenuOpen
-                  ? 'bg-white/10 text-white hover:bg-white/20 focus-visible:ring-[#D4EA50]'
-                  : isDarkHero
-                  ? 'bg-white/10 text-white hover:bg-white/20 focus-visible:ring-[#D4EA50]'
-                  : 'bg-[#EEF3EE] text-[#0B2A33] hover:bg-[#146375] hover:text-[#FBFAF2] focus-visible:ring-[#146375]'
+                  ? 'bg-white/20 text-[#D4EA50]'
+                  : 'bg-white/10 hover:bg-white/20 text-white'
               }`}
             >
-              {/* Animated Hamburger / X lines */}
-              <div className="w-5 h-4 relative flex flex-col justify-between">
+              <div className="w-4 h-3.5 relative flex flex-col justify-between">
                 <span
                   className={`w-full h-0.5 rounded-full transition-all duration-300 transform origin-center ${
                     isMenuOpen
-                      ? 'rotate-45 translate-y-[7px] bg-[#D4EA50]'
+                      ? 'rotate-45 translate-y-[6px] bg-[#D4EA50]'
                       : 'bg-current'
                   }`}
                 />
@@ -104,7 +133,7 @@ export default function Navbar() {
                 <span
                   className={`w-full h-0.5 rounded-full transition-all duration-300 transform origin-center ${
                     isMenuOpen
-                      ? '-rotate-45 -translate-y-[7px] bg-[#D4EA50]'
+                      ? '-rotate-45 -translate-y-[6px] bg-[#D4EA50]'
                       : 'bg-current'
                   }`}
                 />
