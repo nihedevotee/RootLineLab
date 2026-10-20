@@ -1,0 +1,146 @@
+// NOTE FOR THE OWNER: You can edit or add product/platform blueprints below.
+// All values, features, and descriptions are customizable.
+
+export const productPlatforms = [
+  {
+    id: 'erp-suite',
+    name: 'Rootline Enterprise Management Suite (EMS)',
+    tagline: 'Modular operations, financial accounting, and inventory engine.',
+    description: 'A modular, high-security operational platform designed for multi-branch companies needing real-time stock reconciliation, invoice automation, and executive ledger reporting.',
+    mockupType: 'erp',
+    features: [
+      'Multi-warehouse stock tracking with automated reorder triggers',
+      'Double-entry chart of accounts & instant balance sheet generation',
+      'Role-based permissions matrix for departmental isolation',
+      'Automated payroll calculation with attendance sync',
+    ],
+    techStack: ['Node.js', 'React', 'PostgreSQL', 'Docker', 'Redis'],
+    badge: 'Enterprise Architecture',
+  },
+  {
+    id: 'saas-starter',
+    name: 'Multi-Tenant SaaS Foundation',
+    tagline: 'Turn your software concept into an enterprise-ready SaaS product.',
+    description: 'A comprehensive starter platform engineered for subscription software. Features granular workspace isolation, tenant-level data segregation, billing webhooks, and team management.',
+    mockupType: 'dashboard',
+    features: [
+      'Isolated tenant data models with row-level security',
+      'Automated recurring billing and subscription tier upgrades',
+      'Multi-seat workspace invitations with custom RBAC roles',
+      'Audit logging, webhook dispatch, and rate-limited developer APIs',
+    ],
+    techStack: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
+    badge: 'SaaS Platform',
+  },
+  {
+    id: 'ecommerce-engine',
+    name: 'Unified Commerce Engine',
+    tagline: 'Lightning-fast digital storefronts with multi-channel stock sync.',
+    description: 'Engineered for direct-to-consumer and retail brands that cannot tolerate sluggish mobile checkout flows. Boasts sub-second catalog queries and unified payment integrations.',
+    mockupType: 'browser',
+    features: [
+      'Instant search and faceted filtering across thousands of SKUs',
+      'Single-page checkout with guest and authenticated flows',
+      'Local & international payment gateway integrations',
+      'Real-time inventory reserve to prevent overselling spikes',
+    ],
+    techStack: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'Redis'],
+    badge: 'Digital Commerce',
+  },
+  {
+    id: 'appointment-system',
+    name: 'Intelligent Booking & Scheduling Hub',
+    tagline: 'Automated appointment calendars and client consultation workflows.',
+    description: 'Designed for clinics, professional practices, and service providers. Eliminates appointment conflicts, handles calendar time-zone math, and sends automated reminder notifications.',
+    mockupType: 'phone',
+    features: [
+      'Real-time provider availability calendars with buffer time rules',
+      'Automated SMS and email appointment reminders',
+      'Client intake forms with encrypted document uploads',
+      'Online deposit and prepayment processing',
+    ],
+    techStack: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'Twilio'],
+    badge: 'Workflow Automation',
+  },
+  {
+    id: 'crm-dashboard',
+    name: 'Operations & Customer Intelligence Hub',
+    tagline: 'A bespoke CRM that fits your sales cadence rather than fighting it.',
+    description: 'Visual sales pipelines, customer interaction timelines, and real-time operational telemetry built to give leadership an unclouded view of team velocity and revenue forecasts.',
+    mockupType: 'dashboard',
+    features: [
+      'Visual drag-and-drop opportunity and sales pipeline stages',
+      'Customer communication timeline integrating email & notes',
+      'Custom metric tracking with real-time KPI widget graphs',
+      'One-click export for management board decks and accounting',
+    ],
+    techStack: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
+    badge: 'Internal Tools',
+  },
+  {
+    id: 'enterprise-wordpress',
+    name: 'Hardened Headless WordPress Platform',
+    tagline: 'Familiar content publishing backed by modern high-speed frontends.',
+    description: 'Give non-technical content teams the familiar WordPress editor while serving pages through high-performance Next.js frontends, completely removing security and speed vulnerabilities.',
+    mockupType: 'browser',
+    features: [
+      'Decoupled frontend rendering sub-second page loads',
+      'Zero public PHP execution reducing attack surfaces',
+      'Custom Gutenberg block library with brand design tokens',
+      'Instant static regeneration when articles are published',
+    ],
+    techStack: ['WordPress REST API', 'Next.js', 'GraphQL', 'Vercel', 'Tailwind CSS'],
+    badge: 'Content Management',
+  },
+];
+
+export const technologiesWeUse = [
+  {
+    name: 'Next.js & React',
+    category: 'Frontend & App Architecture',
+    description: 'Server-side rendering, streaming, static generation, and high-performance component architecture.',
+    icon: 'Code2',
+  },
+  {
+    name: 'Node.js & Express',
+    category: 'Backend & Services',
+    description: 'Asynchronous, event-driven backends capable of handling thousands of concurrent connections.',
+    icon: 'Server',
+  },
+  {
+    name: 'PostgreSQL & MongoDB',
+    category: 'Databases & Storage',
+    description: 'ACID-compliant relational structures and high-throughput document stores with robust replication.',
+    icon: 'Database',
+  },
+  {
+    name: 'React Native & Flutter',
+    category: 'Mobile Applications',
+    description: 'Unified cross-platform engineering for iOS and Android with smooth 60fps native feel.',
+    icon: 'Smartphone',
+  },
+  {
+    name: 'REST & GraphQL APIs',
+    category: 'System Integration',
+    description: 'Strictly typed, versioned, and documented communication interfaces for decoupled platforms.',
+    icon: 'Network',
+  },
+  {
+    name: 'Enterprise WordPress',
+    category: 'CMS & Publishing',
+    description: 'Custom block patterns, headless architectures, and hardened editorial publishing environments.',
+    icon: 'Layers',
+  },
+  {
+    name: 'Tailwind CSS',
+    category: 'Design Systems',
+    description: 'Tokenized styling pipelines, sub-kilobyte CSS bundles, and rapid UI maintenance.',
+    icon: 'Palette',
+  },
+  {
+    name: 'Docker & Cloud VPS',
+    category: 'DevOps & Reliability',
+    description: 'Reproducible containerized environments, automated CI/CD pipelines, and high-availability setups.',
+    icon: 'Cloud',
+  },
+];

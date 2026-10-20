@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rootline Lab — Modern Company Website
 
-## Getting Started
+A complete, production-ready marketing website and web platform for **Rootline Lab**, an engineering studio based in Dhaka, Bangladesh. Built with **Next.js (App Router)**, **JavaScript**, **Tailwind CSS**, and **Framer Motion**, adhering to an Apple-inspired aesthetic and "Morning Canopy" design palette.
 
-First, run the development server:
+---
 
+## 1. Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: JavaScript (ES6+ / React 19)
+- **Styling**: Tailwind CSS v4 with customized Morning Canopy design tokens & CSS variables
+- **Motion & Interactions**: Framer Motion with Apple ease curves (`[0.22, 1, 0.36, 1]`) and `prefers-reduced-motion` support
+- **Icons**: Lucide React
+- **Email Service**: Nodemailer Route Handler (`/api/contact`) with SMTP support and honeypot spam prevention
+- **Centralized Content**: All copy lives inside `/data/*.js` files
+
+---
+
+## 2. Design System: "Morning Canopy" Palette
+
+| Token | Hex | Role |
+|---|---|---|
+| `--deep-teal` | `#146375` | Primary brand, headings on light, dark sections, primary buttons |
+| `--canopy-green` | `#3C8D70` | Secondary brand, links, icons, hover states |
+| `--leaf` | `#99CB5B` | Accents, highlights, chart/diagram fills |
+| `--lime` | `#D4EA50` | Highlight accent, CTA glow, key emphasis words |
+| `--cream` | `#F5EFB3` | Soft section backgrounds, badges, subtle surfaces |
+| `--ink` | `#0B2A33` | Body text on light, header brand text |
+| `--ink-deep` | `#06161B` | Dark section background |
+| `--paper` | `#FBFAF2` | Warm off-white page background |
+| `--mist` | `#EEF3EE` | Cards on light |
+
+---
+
+## 3. Site Map & Routes
+
+- `/` — **Home**: Full-viewport hero with device mockups cluster, capabilities marquee, 11-service Bento grid, 4-phase methodology, solutions/products/industries/case-study teasers, and CTA band.
+- `/services` — **Services**: All 11 engineering disciplines with alternating layouts, sticky anchor subnav, deliverables checklists, and process summary.
+- `/solutions` — **Solutions**: Business-problem-oriented expandable drawers (sell online, automate workflows, launch SaaS, manage business, connect systems, modernize legacy).
+- `/products` — **Products & Platforms**: Apple-style product tiles with CSS-built UI mockups (ERP, SaaS, Commerce, Scheduling, CRM) and a technology stack grid.
+- `/industries` — **Industries**: 10 sector blueprints with interactive accessible modal details.
+- `/case-studies` — **Case Studies**: Filterable project gallery with animated filter chips.
+- `/case-studies/[slug]` — **Case Study Detail**: Challenge → Solution → Result → Tech used breakdown.
+- `/about` — **About Us**: Founding story, mission/vision, core values, principles, leadership placeholders, and "Rooted in Dhaka, Building for the World".
+- `/careers` — **Careers**: Culture, perks, 4-step hiring process, 4 open positions with expandable details and direct mailto apply button.
+- `/blog` — **Blog & Resources**: Featured article showcase, category filter chips, search input, and article grid.
+- `/blog/[slug]` — **Article Reader**: Clean 720px reader layout, author attribution, and related articles.
+- `/contact` — **Contact**: Accessible form with validation, honeypot protection, response-time commitment, and studio info.
+- `/_not-found` — Custom branded 404 page.
+- `/sitemap.xml` & `/robots.txt` — Automated SEO generation.
+
+---
+
+## 4. Setup & Local Development
+
+### Prerequisites
+- Node.js 18+ (tested on Node.js v24.12.0)
+- npm 9+
+
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repo-url> rootline-portfolio
+cd rootline-portfolio
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running Locally
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Building for Production
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Linting
+```bash
+npm run lint
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 5. Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a `.env.local` file in the root directory (based on `.env.example`):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# SMTP Configuration for Contact Form (e.g. Gmail App Password, AWS SES, or SendGrid)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=rootlinelab.info@gmail.com
+SMTP_PASS=your-16-character-app-password
 
-## Deploy on Vercel
+# Target inbox for contact form submissions (defaults to rootlinelab.info@gmail.com)
+CONTACT_EMAIL=rootlinelab.info@gmail.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Site URL for metadata and XML sitemap generation
+NEXT_PUBLIC_SITE_URL=https://rootlinelab.com
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Note: If SMTP variables are not set during local development, form submissions will log cleanly to the server console and return a simulated success response.*
+
+---
+
+## 6. How to Edit Content in `/data`
+
+The entire website is designed so the business owner can edit copy without touching JSX or component code:
+
+| File | Content Controlled |
+|---|---|
+| `data/site.js` | Company name, email, location, phone, tagline, navigation links, capabilities marquee |
+| `data/services.js` | All 11 services, descriptions, feature bullet points, and deliverables |
+| `data/solutions.js` | Business problems, technical approaches, services involved, and outcomes |
+| `data/products.js` | Platforms, descriptions, feature tags, and technologies grid |
+| `data/industries.js` | 10 industry sectors, "how we help" descriptions, and example blueprints |
+| `data/caseStudies.js` | Case study titles, challenges, solutions, results, highlights, and tech stacks |
+| `data/jobs.js` | Open positions, responsibilities, requirements, perks, and hiring steps |
+| `data/posts.js` | Blog articles, categories, reading times, authors, and paragraph content |
+
+---
+
+## 7. Deployment to Vercel
+
+1. Push your repository to GitHub, GitLab, or Bitbucket.
+2. Go to [Vercel](https://vercel.com) and import the repository.
+3. In **Project Settings → Environment Variables**, add:
+   - `SMTP_HOST`
+   - `SMTP_PORT`
+   - `SMTP_USER`
+   - `SMTP_PASS`
+   - `CONTACT_EMAIL`
+   - `NEXT_PUBLIC_SITE_URL`
+4. Click **Deploy**. Vercel will automatically build the Next.js App Router application with static prerendering across all 24 pages.

@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
+@theme {
+  --color-deep-teal: #146375;
+  --color-canopy-green: #3C8D70;
+  --color-leaf: #99CB5B;
+  --color-lime: #D4EA50;
+  --color-cream: #F5EFB3;
+  --color-ink: #0B2A33;
+  --color-ink-deep: #06161B;
+  --color-paper: #FBFAF2;
+  --color-mist: #EEF3EE;
+
+  --font-inter: var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+
+  --radius-card: 24px;
+  --radius-card-lg: 32px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --deep-teal: #146375;
+  --canopy-green: #3C8D70;
+  --leaf: #99CB5B;
+  --lime: #D4EA50;
+  --cream: #F5EFB3;
+  --ink: #0B2A33;
+  --ink-deep: #06161B;
+  --paper: #FBFAF2;
+  --mist: #EEF3EE;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--lime);
+  color: var(--ink);
+}
+
+/* Accessible visible focus states */
+:focus-visible {
+  outline: 2px solid var(--deep-teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.dark-section :focus-visible,
+[data-theme="dark"] :focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 99, 117, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 99, 117, 0.6);
+}
+
+/* Modal and dialog overscroll containment */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
 }
