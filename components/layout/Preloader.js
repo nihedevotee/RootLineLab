@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 export default function Preloader() {
@@ -74,25 +75,15 @@ export default function Preloader() {
 
         {/* Center Logo & Progress */}
         <div className="max-w-xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-[#146375]/30 border border-[#3C8D70]/40">
-            <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10" aria-hidden="true">
-              <path
-                d="M6 19C8 16 11 14 12 11V4"
-                stroke="#D4EA50"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12 11C13.5 9 16 8 18 9"
-                stroke="#99CB5B"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <circle cx="18.5" cy="8.5" r="2" fill="#D4EA50" />
-              <circle cx="12" cy="3.5" r="2" fill="#99CB5B" />
-            </svg>
+          <div className="inline-flex items-center justify-center p-2 rounded-3xl bg-[#146375]/30 border border-[#3C8D70]/40 shadow-xl">
+            <Image
+              src="/icon-192.png"
+              alt="Rootline Lab"
+              width={72}
+              height={72}
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-contain"
+              priority
+            />
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
