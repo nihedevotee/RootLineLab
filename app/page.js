@@ -61,7 +61,7 @@ export default function HomePage() {
             </div>
 
             {/* Apple-style massive headline */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05] max-w-5xl mx-auto">
+            <h1 className="text-focus-in text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05] max-w-5xl mx-auto">
               Your business is{' '}
               <span className="text-[#D4EA50] underline decoration-[#99CB5B] decoration-4 underline-offset-8">
                 unique
