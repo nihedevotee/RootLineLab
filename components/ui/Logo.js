@@ -3,7 +3,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Logo({ light = false, className = '', height = 38 }) {
+export default function Logo({
+  light = false,
+  className = '',
+  height = 38,
+  imageClassName = '',
+}) {
   const logoSrc = light ? '/logo-dark.png' : '/logo-light.png';
   const width = Math.round(height * (890 / 263)); // Preserve aspect ratio
 
@@ -19,7 +24,10 @@ export default function Logo({ light = false, className = '', height = 38 }) {
         width={width}
         height={height}
         priority
-        className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-opacity duration-200"
+        className={
+          imageClassName ||
+          'h-8 sm:h-9 md:h-10 w-auto object-contain transition-opacity duration-200'
+        }
       />
     </Link>
   );

@@ -41,7 +41,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 sm:pb-16 border-b border-[#146375]/15">
           {/* Brand & Studio Overview (lg:col-span-5) */}
           <div className="lg:col-span-5 space-y-6">
-            <Logo light={false} />
+            <Logo
+              light={false}
+              height={64}
+              imageClassName="h-12 sm:h-14 md:h-16 w-auto object-contain"
+            />
 
             <p className="text-sm sm:text-base text-[#146375]/80 leading-relaxed font-normal max-w-md">
               {siteConfig.tagline} We engineer resilient web applications, custom software, and digital platforms that accelerate modern business growth.
@@ -204,9 +208,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Subtle Architectural Wordmark (Clean & unobtrusive) */}
-        <div className="mt-8 sm:mt-12 pt-4 flex justify-center overflow-hidden pointer-events-none select-none">
-          <span className="text-[11vw] font-black tracking-[-0.04em] leading-none text-[#146375]/[0.035] uppercase whitespace-nowrap">
+        {/* Architectural Wordmark with high-visibility contrast */}
+        <div className="mt-8 sm:mt-12 pt-6 flex justify-center overflow-hidden pointer-events-none select-none border-t border-[#146375]/10">
+          <span className="text-[12.5vw] font-black tracking-[-0.04em] leading-none text-[#146375]/20 uppercase whitespace-nowrap">
             ROOTLINE LAB
           </span>
         </div>
