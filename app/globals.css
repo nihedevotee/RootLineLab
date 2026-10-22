@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./team-experience.css";
 
 @theme {
   --color-deep-teal: #146375;

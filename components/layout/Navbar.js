@@ -14,7 +14,8 @@ const navItems = [
   { name: 'Industries', href: '/industries', index: '05' },
   { name: 'Case Studies', href: '/case-studies', index: '06' },
   { name: 'About', href: '/about', index: '07' },
-  { name: 'Blog', href: '/blog', index: '08' },
+  { name: 'Team', href: '/team', index: '08' },
+  { name: 'Blog', href: '/blog', index: '09' },
 ];
 
 export default function Navbar() {

@@ -14,6 +14,7 @@ export default function sitemap() {
     '/industries',
     '/case-studies',
     '/about',
+    '/team',
     '/careers',
     '/blog',
     '/contact',

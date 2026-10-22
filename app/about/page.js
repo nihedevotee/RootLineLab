@@ -4,7 +4,9 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import Button from '@/components/ui/Button';
 import RevealOnScroll from '@/components/ui/RevealOnScroll';
 import CTABand from '@/components/sections/CTABand';
+import Link from 'next/link';
 import { siteConfig } from '@/data/site';
+import { team } from '@/data/team';
 import {
   Compass,
   Code2,
@@ -45,29 +47,6 @@ const values = [
     title: 'Honest Advisory',
     description:
       'We tell you if a simpler off-the-shelf tool or low-code solution solves your problem before writing thousands of lines of custom code. Your capital efficiency comes first.',
-  },
-];
-
-const teamPlaceholders = [
-  {
-    initials: 'TK',
-    role: 'Lead Architect & Systems Engineer',
-    focus: 'Distributed Backends & ERP Architecture',
-  },
-  {
-    initials: 'RS',
-    role: 'Staff Frontend Engineer',
-    focus: 'Next.js, Interaction Design & Accessibility',
-  },
-  {
-    initials: 'MN',
-    role: 'Principal Product Designer',
-    focus: 'Design Systems & Workflow Prototyping',
-  },
-  {
-    initials: 'AI',
-    role: 'Lead QA & Reliability Engineer',
-    focus: 'Automated Testing & Security Hardening',
   },
 ];
 
@@ -215,33 +194,36 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* 6. TEAM PLACEHOLDERS (No fake bios as required) */}
+      {/* 6. LEADERSHIP — real team, full experience lives on /team */}
       <Section theme="light" py="lg">
         <Container>
           <SectionHeading
-            kicker="Leadership & Craft"
-            title="Our Engineering Leads"
-            subhead="A tight-knit collective of software architects, product designers, and reliability specialists."
+            kicker="Leadership"
+            title="The people behind the systems"
+            subhead="Rootline Lab is led by six people across leadership, engineering, product and quality."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamPlaceholders.map((member, idx) => (
-              <RevealOnScroll
-                key={idx}
-                delay={idx * 0.08}
-                className="bg-[#EEF3EE]/50 border border-[#146375]/15 rounded-3xl p-6 text-center space-y-4 hover:bg-[#FBFAF2] transition-colors"
-              >
-                {/* Initials Avatar */}
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#146375] to-[#0E3D47] text-[#D4EA50] font-mono font-bold text-xl flex items-center justify-center mx-auto shadow-md">
-                  {member.initials}
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-[#146375]">{member.role}</h4>
-                  <p className="text-xs font-mono text-[#3C8D70] font-medium mt-1">
-                    {member.focus}
-                  </p>
-                </div>
-              </RevealOnScroll>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-[#146375]/15">
+            {team.map((member) => (
+              <li key={member.slug} className="border-b border-[#146375]/15">
+                <Link
+                  href={`/team?member=${member.slug}`}
+                  className="group flex items-baseline gap-4 py-6 pr-4 focus-visible:outline-offset-4"
+                >
+                  <span className="font-mono text-xs text-[#3C8D70]">{member.index}</span>
+                  <span>
+                    <span className="block text-xl font-bold tracking-tight text-[#0B2A33] transition-colors group-hover:text-[#146375]">
+                      {member.name}
+                    </span>
+                    <span className="mt-1 block text-sm text-[#0B2A33]/70">{member.role}</span>
+                  </span>
+                </Link>
+              </li>
             ))}
+          </ol>
+          <div className="mt-12 text-center">
+            <Button href="/team" variant="primary" size="md" iconRight={<ArrowRight className="w-4 h-4" />}>
+              Meet the leadership team
+            </Button>
           </div>
         </Container>
       </Section>

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 import RevealOnScroll from '@/components/ui/RevealOnScroll';
@@ -6,7 +5,7 @@ import { siteConfig } from '@/data/site';
 import { Mail, ArrowRight } from 'lucide-react';
 
 export default function CTABand({
-  title = 'Your business is unique. Your software should be, too.',
+  title,
   subtitle = 'Schedule a conversation with our engineering leads to discuss your requirements, architecture, or roadmap.',
   className = '',
 }) {
@@ -23,8 +22,12 @@ export default function CTABand({
           </span>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08] mb-6">
-            Your business is unique.{' '}
-            <span className="text-[#D4EA50]">Your software</span> should be, too.
+            {title || (
+              <>
+                Your business is unique.{' '}
+                <span className="text-[#D4EA50]">Your software</span> should be, too.
+              </>
+            )}
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-[#F5EFB3]/90 max-w-2xl mx-auto leading-relaxed mb-10 font-light">
