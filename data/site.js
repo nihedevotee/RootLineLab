@@ -18,9 +18,10 @@ export const siteConfig = {
     { name: 'Industries', href: '/industries', index: '05' },
     { name: 'Case Studies', href: '/case-studies', index: '06' },
     { name: 'About', href: '/about', index: '07' },
-    { name: 'Careers', href: '/careers', index: '08' },
-    { name: 'Blog', href: '/blog', index: '09' },
-    { name: 'Contact', href: '/contact', index: '10' },
+    { name: 'Team', href: '/team', index: '08' },
+    { name: 'Careers', href: '/careers', index: '09' },
+    { name: 'Blog', href: '/blog', index: '10' },
+    { name: 'Contact', href: '/contact', index: '11' },
   ],
   capabilities: [
     'Web Applications',
@@ -46,6 +47,7 @@ export const siteConfig = {
     ],
     company: [
       { name: 'About Us', href: '/about' },
+      { name: 'Leadership Team', href: '/team' },
       { name: 'Solutions', href: '/solutions' },
       { name: 'Products & Platforms', href: '/products' },
       { name: 'Industries', href: '/industries' },
