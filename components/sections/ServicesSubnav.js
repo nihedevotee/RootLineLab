@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { services } from '@/data/services';
+import { getLenis } from '@/components/layout/SmoothScroll';
 
 export default function ServicesSubnav() {
   const [activeId, setActiveId] = useState(services[0].id);
@@ -33,10 +34,9 @@ export default function ServicesSubnav() {
       const elementPosition = elementRect - bodyRect;
       const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+      const lenis = getLenis();
+      if (lenis) lenis.scrollTo(offsetPosition);
+      else window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       setActiveId(id);
     }
   };

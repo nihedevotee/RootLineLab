@@ -86,10 +86,11 @@ Not measured: Safari and Firefox (not installed here), real phones, Lighthouse.
 
 | Item | Status |
 |---|---|
-| Portraits | **Kazi Salman added** (`public/team/kazi-salman.jpg`, EXIF/GPS stripped). Others still show root signatures; add `public/team/<slug>.jpg` (4:5) and set `portrait` |
-| Maysha, Afnan: full names, bios, links | Not supplied |
+| Portraits | **All six added** (`public/team/<slug>.jpg`, 4:5, metadata stripped). Maheer (439×549) and Galib (480×600) were supplied small; replace with larger originals when available |
+| Maysha: bio, links | Not supplied (full name and portrait supplied) |
+| Afnan: bio, LinkedIn/portfolio | Not supplied (full name, email and portrait supplied) |
 | Bios for everyone | Not supplied (rendered only when present) |
 | Maheer's LinkedIn slug | Supplied `/in/younus-mohammad-maheer-a78a08348/`, but his portfolio links `/in/younus-mohammadmaheer`; confirm |
 | Rupesh's LinkedIn `/in/rupesh-saha` | Login-walled; shown as supplied |
 
-Confirmed: Galib = Khalid Al Galib (portfolio verified), Maheer = Younus Mohammad Maheer, Salman = Kazi Salman (`kazisalman.dev`, `kazisalman840@gmail.com`).
+Confirmed: Galib = Khalid Al Galib (portfolio verified; his Messenger display name is "Galib Hasan"), Maheer = Younus Mohammad Maheer, Salman = Kazi Salman (`kazisalman.dev`, `kazisalman840@gmail.com`).

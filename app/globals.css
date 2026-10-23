@@ -35,6 +35,21 @@ html {
   color-scheme: light;
 }
 
+/* Smooth wheel scrolling (components/layout/SmoothScroll.js) drives the scroll position itself */
+html.lenis {
+  scroll-behavior: auto;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 body {
   background-color: var(--paper);
   color: var(--ink);
