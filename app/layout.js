@@ -4,6 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Preloader from '@/components/layout/Preloader';
 import SkipLink from '@/components/layout/SkipLink';
+import SmoothScroll from '@/components/layout/SmoothScroll';
 import { siteConfig } from '@/data/site';
 
 const inter = Inter({
@@ -87,6 +88,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full flex flex-col bg-[#FBFAF2] text-[#146375] selection:bg-[#D4EA50] selection:text-[#146375]">
         <SkipLink />
+        <SmoothScroll />
         <Preloader />
         <Navbar />
         <main id="main-content" className="flex-1 focus:outline-none">

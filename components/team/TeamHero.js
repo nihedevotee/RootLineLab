@@ -32,8 +32,8 @@ export default function TeamHero({ members, activeIndex, onHover, onSelect }) {
           <span>06 sheets</span>
         </div>
 
-        {/* Root system visual */}
-        <div className="relative col-span-full h-[46svh] min-h-[300px] lg:absolute lg:inset-x-0 lg:top-24 lg:bottom-0 lg:h-auto">
+        {/* Root system visual — full-bleed below lg so the roots get the whole screen width */}
+        <div className="relative col-span-full -mx-5 h-[46svh] min-h-[300px] sm:-mx-8 lg:absolute lg:inset-x-0 lg:top-24 lg:bottom-0 lg:mx-0 lg:h-auto">
           {useGL && (
             <RootSystemCanvas
               members={members}

@@ -46,12 +46,22 @@ export default function Navbar() {
       }
     };
 
+    // One layout read per frame at most, however many scroll events arrive.
+    let frame = 0;
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(() => {
+        frame = 0;
+        handleScroll();
+      });
+    };
+
     handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true });
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
     };
   }, [isMenuOpen, pathname]);
 
@@ -65,7 +75,7 @@ export default function Navbar() {
         }`}
       >
         {/* Floating Translucent Pill Container with increased width & breathing room */}
-        <div className="relative flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-full bg-[#146375]/85 hover:bg-[#146375]/95 backdrop-blur-xl border border-white/20 shadow-2xl shadow-[#0E3D47]/40 transition-colors duration-300 select-none">
+        <div className="relative flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-full bg-[#146375]/85 hover:bg-[#146375]/95 backdrop-blur-md border border-white/20 shadow-2xl shadow-[#0E3D47]/40 transition-colors duration-300 select-none">
           {/* Left: Official Logo */}
           <div className="shrink-0 pl-1">
             <Logo light height={32} />
